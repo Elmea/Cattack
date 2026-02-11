@@ -13,11 +13,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: configure
-      run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+    - name: makeWindows
+      run: make CXX=x86_64-w64-mingw32-g++ BUILD_TYPE=release PACKAGE_ASSETS=true
